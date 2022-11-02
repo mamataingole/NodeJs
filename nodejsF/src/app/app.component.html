@@ -1,0 +1,73 @@
+<div class="main">
+  <form #userForm="ngForm" (ngSubmit)="onSubmit()">
+    {{ userForm.value | json }}
+    <div class="mb-3">
+      <input
+        class="form-control"
+        type="text"
+        placeholder="Enter Task"
+        #name="ngModel"
+        name="taskName "
+        required
+        [(ngModel)]="userModel.taskName"
+      />
+    </div>
+    <div class="mb-3">
+      <select
+        class="form-select"
+        name="priority"
+        #priority="ngModel"
+        [(ngModel)]="userModel.priority"
+      >
+        <option value="">Select the priority</option>
+        <option value="low">Low</option>
+        <option value="medium">medium</option>
+        <option value="high">High</option>
+      </select>
+    </div>
+    <div class="mb-3">
+      <input class="form-control" type="date" name="duedate" #duedate="ngModel" [(ngModel)]="userModel.duedate" />
+    </div>
+    <button class="btn btn-primary" type="submit">submit form</button>
+  </form>
+</div>
+
+
+
+
+
+
+<!-- <div class="main">
+  <form #userForm="ngForm">
+   {{userForm.value | json}}
+    <div class="mb-3">
+      <input
+        class="form-control"
+        type="text"
+        placeholder="Enter Task"
+        ngModel
+        name="taskName"
+        required
+        [(ngModel)]=""
+      
+      />
+    </div>
+    <div class="mb-3">
+      <select
+        class="form-select"
+        name="priority"
+        ngModel
+       
+      >
+        <option value="">Select the priority</option>
+        <option value="low">Low</option>
+        <option value="medium">medium</option>
+        <option value="high">High</option>
+      </select>
+    </div>
+    <div class="mb-3">
+      <input class="form-control" type="date" name="duedate"  ngModel />
+    </div>
+    <button class="btn btn-primary" type="submit">submit form</button>
+  </form>
+</div> -->
